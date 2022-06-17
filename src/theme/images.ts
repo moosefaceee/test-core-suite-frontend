@@ -12,5 +12,7 @@ export default {
   midOne: new URL('../assets/map/mid1.png', import.meta.url).href,
   midTwo: new URL('../assets/map/mid2.png', import.meta.url).href,
   midThree: new URL('../assets/map/mid3.png', import.meta.url).href,
-  top: new URL('../assets/map/top.png', import.meta.url).href
+  top: new URL('../assets/map/top.png', import.meta.url).href,
+  coreSuiteDark: new URL('../assets/images/core-suite-FE-dark.svg', import.meta.url).href,
+  coreSuiteLight: new URL('../assets/images/core-suite-FE-light.svg', import.meta.url).href
 }

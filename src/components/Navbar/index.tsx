@@ -1,6 +1,5 @@
 import {
   Avatar,
-  Box,
   Center,
   Flex,
   Icon,
@@ -20,6 +19,7 @@ import { faker } from '@faker-js/faker'
 import { FiUser } from 'react-icons/fi'
 import { Outlet } from 'react-router-dom'
 import { useAuth } from '../../context/AuthProvider'
+import Logo from '../Logo'
 import ModeToggle from '../ModeToggle'
 
 function Navbar() {
@@ -27,7 +27,14 @@ function Navbar() {
 
   return (
     <>
-      <Box backgroundColor={useColorModeValue('gray.50', 'gray.800')} paddingX={4} as="header">
+      <Flex
+        alignItems="center"
+        as="header"
+        backgroundColor={useColorModeValue('gray.50', 'gray.800')}
+        justifyContent="space-between"
+        paddingX={4}
+      >
+        <Logo />
         <Flex height={16} alignItems="center" justifyContent="flex-end" as="nav">
           <Flex alignItems="center">
             <Stack direction="row" spacing={6}>
@@ -57,7 +64,7 @@ function Navbar() {
             </Stack>
           </Flex>
         </Flex>
-      </Box>
+      </Flex>
       <Outlet />
     </>
   )

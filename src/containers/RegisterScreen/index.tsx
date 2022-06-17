@@ -74,7 +74,7 @@ function RegisterScreen(): React.ReactElement {
             <Stack paddingTop={4}>
               <Text alignItems="center">
                 Already a user?{' '}
-                <Link color="blue.400" onClick={() => navigate('/')}>
+                <Link color="blue.400" onClick={() => navigate('/login')}>
                   Login
                 </Link>
               </Text>
