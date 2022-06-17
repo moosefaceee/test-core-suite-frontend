@@ -1,6 +1,6 @@
 # core suite frontend
 
-This repository contains the core-suite suite frontend code.
+This repository contains the core-suite frontend code.
 
 ## Getting Started
 
@@ -37,7 +37,7 @@ Below is a series of step by step instructions that tell you how to get a develo
 Create a local clone of the repository
 
 ```bash
-git clone git@bitbucket.org:sovtech/core-suite-frontend.git
+git clone git@github.com:moosefaceee/test-core-suite-frontend.git
 ```
 
 Enter the cloned repositories' directory
@@ -70,7 +70,7 @@ yarn dev
 
 The project should now be available at http://localhost:3000
 
-![login page](https://i.imgur.com/N2Kv2UV.png)
+<!-- ![login page](https://i.imgur.com/N2Kv2UV.png) -->
 
 ## Environments
 
@@ -171,6 +171,8 @@ Certificates are auto renewed by AWS certificate manager granted the validation 
 Details of the tech stack that has been used.
 
 - [React](https://reactjs.org/) - Client Framework
+- [ChakraUI](https://chakra-ui.com/) - UI Framework
+- [Vite](https://vitejs.dev/) - Frontend Tooling
 
 ## Architecture
 
