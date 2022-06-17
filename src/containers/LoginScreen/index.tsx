@@ -12,8 +12,7 @@ import {
   Text,
   useColorModeValue
 } from '@chakra-ui/react'
-import { useNavigate } from 'react-router-dom'
-import { RouterLink } from '../../components'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../context/AuthProvider'
 
 // src/index.ts
@@ -44,7 +43,7 @@ function LoginScreen(): React.ReactElement {
         <Stack align="center">
           <Heading fontSize="4xl">Sign in to your account</Heading>
           <Text fontSize="lg" color="gray.400">
-            to enjoy all of our cool <RouterLink to="about">features</RouterLink>
+            to enjoy all of our cool <NavLink to="about">features</NavLink>
             ✌️
           </Text>
         </Stack>
