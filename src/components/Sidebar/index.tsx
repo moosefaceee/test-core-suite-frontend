@@ -23,10 +23,10 @@ const LinkItems: Array<LinkItemProps> = [
 ]
 
 function Sidebar() {
-  const { drawerOpen } = useAppContext()
+  let { drawerOpen } = useAppContext()
 
   // TODO: Open/close
-  //   const { drawerOpen, toggleDrawer } = useAppContext()
+  // let { drawerOpen, toggleDrawer } = useAppContext()
 
   return (
     <>
@@ -70,7 +70,7 @@ function Sidebar() {
                 {icon && (
                   <Icon
                     marginRight={4}
-                    fontSize="16"
+                    fontSize="16px"
                     _groupHover={{
                       color: 'white'
                     }}

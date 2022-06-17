@@ -10,8 +10,6 @@ function GuestNavbar() {
           <Stack direction="row" spacing={6} alignItems="center">
             <NavLink to={'/home'}>Home</NavLink>
             <NavLink to={'/about'}>About</NavLink>
-            {/* testing protected route, this should navigate you bacck to log in */}
-            <NavLink to={'/protected/dashboard'}>Dashboard</NavLink>
             <ModeToggle />
           </Stack>
         </Flex>

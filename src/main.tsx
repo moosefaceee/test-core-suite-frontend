@@ -7,7 +7,7 @@ import ReactDOM from 'react-dom/client'
 import { HelmetProvider } from 'react-helmet-async'
 import { BrowserRouter } from 'react-router-dom'
 import App from './App'
-import { AppProvider, AuthProvider } from './context'
+import { AppProvider } from './context'
 import theme from './theme'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -24,11 +24,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
             `}
           />
           <CSSReset />
-          <AuthProvider>
-            <HelmetProvider>
-              <App />
-            </HelmetProvider>
-          </AuthProvider>
+          <HelmetProvider>
+            <App />
+          </HelmetProvider>
         </AppProvider>
       </BrowserRouter>
     </ChakraProvider>

@@ -13,6 +13,8 @@ import {
   useColorModeValue
 } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom'
+import { RouterLink } from '../../components'
+import { useAuth } from '../../context/AuthProvider'
 
 // src/index.ts
 
@@ -33,6 +35,7 @@ import { useNavigate } from 'react-router-dom'
 // }
 
 function LoginScreen(): React.ReactElement {
+  let { login } = useAuth()
   let navigate = useNavigate()
 
   return (
@@ -41,7 +44,8 @@ function LoginScreen(): React.ReactElement {
         <Stack align="center">
           <Heading fontSize="4xl">Sign in to your account</Heading>
           <Text fontSize="lg" color="gray.400">
-            to enjoy all of our cool <Link color="blue.400">features</Link> ✌️
+            to enjoy all of our cool <RouterLink to="about">features</RouterLink>
+            ✌️
           </Text>
         </Stack>
         <Box rounded="lg" bg={useColorModeValue('white', 'gray.700')} boxShadow="lg" padding={8}>
@@ -67,6 +71,7 @@ function LoginScreen(): React.ReactElement {
                 _hover={{
                   bg: 'blue.500'
                 }}
+                onClick={login}
               >
                 Sign in
               </Button>
