@@ -11,7 +11,7 @@ definitions:
           - npm i -g graphql-cli
           # Install app dependencies
           - yarn
-          - echo ${REACT_APP_API_HOST}/graphql
+          - echo ${VITE_API_HOST}/graphql
           - yarn generate
           # Run AWS Deploy
           - yarn build

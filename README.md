@@ -1,4 +1,4 @@
-# core suite frontend
+# Core Suite Frontend
 
 This repository contains the core-suite frontend code.
 
@@ -130,24 +130,24 @@ These are the environment variables required to successfully deploy the applicat
 
 ### Repository Variables
 
-| key                       | description                                       |
-| ------------------------- | ------------------------------------------------- |
-| AWS_DEFAULT_REGION        | Default AWS region key for deployment             |
-| REACT_APP_BUGSNAG_API_KEY | Bugsnag project API key                           |
-| AWS_ACCESS_KEY_ID         | AWS IAM access key with deploy permissions        |
-| AWS_SECRET_ACCESS_KEY     | AWS IAM secret access key with deploy permissions |
-| COVERALLS_ENDPOINT        | SovTech custom coveralls API endpoint             |
+| key                   | description                                       |
+| --------------------- | ------------------------------------------------- |
+| AWS_DEFAULT_REGION    | Default AWS region key for deployment             |
+| VITE_BUGSNAG_API_KEY  | Bugsnag project API key                           |
+| AWS_ACCESS_KEY_ID     | AWS IAM access key with deploy permissions        |
+| AWS_SECRET_ACCESS_KEY | AWS IAM secret access key with deploy permissions |
+| COVERALLS_ENDPOINT    | SovTech custom coveralls API endpoint             |
 
 ### Deployment Variables
 
 Each of the below keys need to be applied to each deployment (dev, uat, prod) and their values will be dependant on the environment.
 
-| key                | description                             |
-| ------------------ | --------------------------------------- |
-| REACT_APP_API_HOST | Backend API endpoint                    |
-| CLOUDFRONT_DIST    | Cloudfront Distribution ID              |
-| REACT_APP_STAGE    | Current environment e.g dev, uat, prod  |
-| S3_BUCKET          | S3 Bucket URI for front-end static site |
+| key             | description                             |
+| --------------- | --------------------------------------- |
+| VITE_API_HOST   | Backend API endpoint                    |
+| CLOUDFRONT_DIST | Cloudfront Distribution ID              |
+| VITE_STAGE      | Current environment e.g dev, uat, prod  |
+| S3_BUCKET       | S3 Bucket URI for front-end static site |
 
 ## Networking
 
