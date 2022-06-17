@@ -52,7 +52,7 @@ Install the projects dependencies
 yarn
 ```
 
-Create a `.env` file based on the [.env.example template](.env.example)
+Create a `.env` file based on the [.env.example template](.env.example) (at the time of writing, no additional env vars are required)
 
 Export the contents of the created `.env` file to the current terminal session.
 
@@ -60,12 +60,12 @@ Export the contents of the created `.env` file to the current terminal session.
 set -o allexport; source .env; set +o allexport
 ```
 
-Start the backend server or alternatively update the `REACT_APP_API_HOST` value to point to a deployed backend URL.
+Start the backend server or alternatively update the `VITE_API_HOST` value to point to a deployed backend URL.
 
 Start the projects development server
 
 ```bash
-yarn start
+yarn dev
 ```
 
 The project should now be available at http://localhost:3000

@@ -24,8 +24,8 @@ function Navigation() {
        * Unauthenticated pages
        */}
       <Route element={<GuestNavbar />}>
-        <Route path="/" element={<PageWrap title="Core Suite" />}>
-          <Route path="login" element={<LoginScreen />} />
+        <Route element={<PageWrap title="Core Suite" />}>
+          <Route path="/" element={<LoginScreen />} />
           <Route path="register" element={<RegisterScreen />} />
           <Route path="home" element={<HomeScreen />} />
           <Route path="about" element={<AboutScreen />} />
