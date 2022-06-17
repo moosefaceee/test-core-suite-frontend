@@ -10,7 +10,7 @@ function Logo({ ...rest }: ImageProps): ReactElement {
   let navigate = useNavigate()
 
   return (
-    <Box onClick={() => navigate(isAuthenticated ? '/auth/dashboard' : '/login')} cursor="pointer">
+    <Box onClick={() => navigate(isAuthenticated ? '/auth/dashboard' : '/')} cursor="pointer">
       <Image {...rest} src={images.sovtech} />
     </Box>
   )
