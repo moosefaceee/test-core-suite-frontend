@@ -9,6 +9,7 @@ type NumberInputProps = {
 
 /**
  * Find documentation here: https://zagjs.com/components/react/number-input
+ * Visualize: https://state-machine-viz.vercel.app/number-input
  */
 function NumberInput({ name, value }: NumberInputProps) {
   const [state, send] = useMachine(numberInput.machine({ name, value }))

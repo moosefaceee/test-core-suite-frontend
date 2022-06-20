@@ -23,6 +23,12 @@ const colors = {
   }
 }
 
-const theme = extendTheme({ colors, config })
+const components = {}
+
+const theme = extendTheme({
+  colors,
+  config,
+  components
+})
 
 export default theme

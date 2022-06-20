@@ -1,3 +1,4 @@
+export { default as Carousel } from './Carousel'
 export { default as GuestNavbar } from './GuestNavbar'
 export { default as Logo } from './Logo'
 export { default as ModeToggle } from './ModeToggle'
