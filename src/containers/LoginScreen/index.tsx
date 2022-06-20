@@ -1,41 +1,25 @@
-import {
-  Box,
-  Button,
-  Checkbox,
-  Flex,
-  FormControl,
-  FormLabel,
-  Heading,
-  Input,
-  Link,
-  Stack,
-  Text,
-  useColorModeValue
-} from '@chakra-ui/react'
+import { Box, Button, Flex, Heading, Link, Stack, Text, useColorModeValue } from '@chakra-ui/react'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { FormProvider, useForm } from 'react-hook-form'
 import { NavLink, useNavigate } from 'react-router-dom'
+import { RememberMe } from '../../components'
+import { PasswordInput, TextInput } from '../../components/FormElements'
 import { useAuth } from '../../context/AuthProvider'
-
-// src/index.ts
-
-// the implementation
-// export function add(...args: number[]) {
-//   return args.reduce((a, b) => a + b, 0)
-// }
-
-// https://vitest.dev/guide/in-source.html
-// in-source test suites
-// if (import.meta.vitest) {
-//   const { it, expect } = import.meta.vitest
-//   it('add', () => {
-//     expect(add()).toBe(0)
-//     expect(add(1)).toBe(1)
-//     expect(add(1, 2, 3)).toBe(6)
-//   })
-// }
+import { loginDefaultValues, loginSchema } from './Validation'
 
 function LoginScreen(): React.ReactElement {
   let { login } = useAuth()
   let navigate = useNavigate()
+
+  let methods = useForm({
+    defaultValues: loginDefaultValues,
+    resolver: zodResolver(loginSchema)
+  })
+
+  function onSubmit() {
+    // submit values, only log in with successful response.
+    return login && login()
+  }
 
   return (
     <Flex align="center" justify="center" flexDirection="column" flex={1}>
@@ -48,42 +32,38 @@ function LoginScreen(): React.ReactElement {
           </Text>
         </Stack>
         <Box rounded="lg" bg={useColorModeValue('white', 'gray.700')} boxShadow="lg" padding={8}>
-          <Stack spacing={4}>
-            <FormControl id="email">
-              <FormLabel>Email address</FormLabel>
-              <Input type="email" />
-            </FormControl>
-            <FormControl id="password">
-              <FormLabel>Password</FormLabel>
-              <Input type="password" />
-            </FormControl>
-            <Stack spacing={6}>
-              <Stack direction="row" alignItems="center" justify="space-between">
-                <Checkbox>Remember me</Checkbox>
-                <Link color="blue.400">Forgot password?</Link>
+          <FormProvider {...methods}>
+            <Stack spacing={4}>
+              <TextInput label="Email address" name="email" type="email" />
+              <PasswordInput label="Passowrd" name="password" />
+              <Stack spacing={6}>
+                <Stack direction="row" alignItems="center" justify="space-between">
+                  <RememberMe />
+                  <Link color="blue.400">Forgot password?</Link>
+                </Stack>
+                <Button
+                  loadingText="Submitting"
+                  size="lg"
+                  backgroundColor="blue.400"
+                  color="white"
+                  _hover={{
+                    backgroundColor: 'blue.500'
+                  }}
+                  onClick={methods.handleSubmit(onSubmit)}
+                >
+                  Sign in
+                </Button>
               </Stack>
-              <Button
-                loadingText="Submitting"
-                size="lg"
-                bg="blue.400"
-                color="white"
-                _hover={{
-                  bg: 'blue.500'
-                }}
-                onClick={login}
-              >
-                Sign in
-              </Button>
+              <Stack paddingTop={4}>
+                <Text alignItems="center">
+                  Don't have an account?{' '}
+                  <Link onClick={() => navigate('/register')} color="blue.400">
+                    Signup
+                  </Link>
+                </Text>
+              </Stack>
             </Stack>
-            <Stack paddingTop={4}>
-              <Text alignItems="center">
-                Don't have an account?{' '}
-                <Link onClick={() => navigate('/register')} color="blue.400">
-                  Signup
-                </Link>
-              </Text>
-            </Stack>
-          </Stack>
+          </FormProvider>
         </Box>
       </Stack>
     </Flex>
