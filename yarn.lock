@@ -1058,6 +1058,15 @@
     "@types/scheduler" "*"
     csstype "^3.0.2"
 
+"@types/react@18.0.13":
+  version "18.0.13"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.0.13.tgz#0f5bd24a5f26593e04e450fe85ff43f51c1524ff"
+  integrity sha512-psqptIYQxGUFuGYwP3KCFVtPTkMpIcrqFmtKblWEUQhLuYLpHBwJkXhjp6eHfDM5IbyskY4x7qQpLedEsPkHlA==
+  dependencies:
+    "@types/prop-types" "*"
+    "@types/scheduler" "*"
+    csstype "^3.0.2"
+
 "@types/scheduler@*":
   version "0.16.2"
   resolved "https://registry.yarnpkg.com/@types/scheduler/-/scheduler-0.16.2.tgz#1a62f89525723dde24ba1b01b092bf5df8ad4d39"
@@ -1082,10 +1091,87 @@
     react-refresh "^0.13.0"
     resolve "^1.22.0"
 
+"@zag-js/core@0.1.6":
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/@zag-js/core/-/core-0.1.6.tgz#2714840e803ad7ff4ab081229019192022ff9c0a"
+  integrity sha512-P9C9fpiaOzb8xWxaAUDpc3dUC7h8FRjziMXc6iwCx2ZxCjY5FfVna1X20y94uKzXd1hxRNeoZpZTa8KNiVGG0w==
+  dependencies:
+    "@zag-js/utils" "0.1.2"
+    klona "^2.0.5"
+    valtio "^1.6.0"
+
+"@zag-js/dom-utils@0.1.5":
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/@zag-js/dom-utils/-/dom-utils-0.1.5.tgz#b1efdcceb163e66429a88ff7b46b87e3cbb53bc9"
+  integrity sha512-4hhDUy1/GEtDDwrw0i1tLmhzdpFZMas0wbKSuGd0suG0Vz+5LLNsET4laTfD81WS36MX8ZUdpltKyCya+AdYRw==
+  dependencies:
+    "@types/react" "18.0.13"
+    "@zag-js/utils" "0.1.2"
+
+"@zag-js/editable@^0.1.9":
+  version "0.1.9"
+  resolved "https://registry.yarnpkg.com/@zag-js/editable/-/editable-0.1.9.tgz#24d08d87349a62df37f276326545820c0f4eff2d"
+  integrity sha512-IesolsEkgeHxcXTERIpntDiDZd6fcEXPJbs/PIIUqsoW0kxsNcyAeC1I8tVilDcSVE3RfO5YVQ+p0qYyPmudAQ==
+  dependencies:
+    "@zag-js/core" "0.1.6"
+    "@zag-js/dom-utils" "0.1.5"
+    "@zag-js/types" "0.2.0"
+
 "@zag-js/focus-visible@0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@zag-js/focus-visible/-/focus-visible-0.1.0.tgz#9777bbaff8316d0b3a14a9095631e1494f69dbc7"
   integrity sha512-PeaBcTmdZWcFf7n1aM+oiOdZc+sy14qi0emPIeUuGMTjbP0xLGrZu43kdpHnWSXy7/r4Ubp/vlg50MCV8+9Isg==
+
+"@zag-js/number-input@^0.1.10":
+  version "0.1.10"
+  resolved "https://registry.yarnpkg.com/@zag-js/number-input/-/number-input-0.1.10.tgz#f24756a709bb6bde1224fee4c5f770ff96d99cf3"
+  integrity sha512-Jy4UGZRIJhW0zZafEvkNjTDTxcJIRGo4bxTjs/rcrAbMbo9nYFzRjtcGOPT0VWtSZYTaei5WqRiHfxzWP89zYA==
+  dependencies:
+    "@zag-js/core" "0.1.6"
+    "@zag-js/dom-utils" "0.1.5"
+    "@zag-js/number-utils" "0.1.2"
+    "@zag-js/rect-utils" "0.1.2"
+    "@zag-js/types" "0.2.0"
+    "@zag-js/utils" "0.1.2"
+
+"@zag-js/number-utils@0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@zag-js/number-utils/-/number-utils-0.1.2.tgz#d58aa5f988a67aacc6bca92e56ab3349d993d260"
+  integrity sha512-ZcIDK5VqCzGRA/ppvuxY0gFyf59lBurVqsejqo0DHLNUN9KmwhYX9BedcSfyFxqIVWc58+3995okn54VCEQdMQ==
+
+"@zag-js/react@^0.1.9":
+  version "0.1.9"
+  resolved "https://registry.yarnpkg.com/@zag-js/react/-/react-0.1.9.tgz#2f7bcd3d1d46a92a7761a819fe2ee5a91d6dc18b"
+  integrity sha512-U48sPcqxneVkm0KxEIY7IYkaYsf+rXBUn9iFnNYD5XRZCLKWelhu1V1FOHBUmQRwaSQCQFc/LXkd/Yuy1r0R+w==
+  dependencies:
+    "@zag-js/core" "0.1.6"
+    valtio "^1.6.1"
+
+"@zag-js/rect-utils@0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@zag-js/rect-utils/-/rect-utils-0.1.2.tgz#d60a4b353b905b3bfc688a694aa64a4620d843b2"
+  integrity sha512-LdtB5e/8dePizvMJ5z8iZpfdYfeuCelgXT7BYAsy/k9qakxmXI1BoLGJEbRlzylol7tWr69lykxTxN6+giuPSA==
+  dependencies:
+    "@zag-js/utils" "0.1.2"
+
+"@zag-js/toggle@^0.1.8":
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/@zag-js/toggle/-/toggle-0.1.8.tgz#80b642bc28ac02c5e5e9f9f9dc5c3390062103e0"
+  integrity sha512-7n36uMzxhZB2//Cuz3Vv9VejllxpuW1ZuRH8+OjOhe/3BbiRjka7xxZHkFuQTo/dC6peqpgLA7SOH7JafhnZXQ==
+  dependencies:
+    "@zag-js/core" "0.1.6"
+    "@zag-js/dom-utils" "0.1.5"
+    "@zag-js/types" "0.2.0"
+
+"@zag-js/types@0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@zag-js/types/-/types-0.2.0.tgz#c05c861ee2143794f7f1ca8a3f99850ef8c70e63"
+  integrity sha512-VF3pJYtIGnfBGz+HuMq9+XCnn8MHE4WabH51m0VFRr2MVme/Of/gA6bL3xKrn2Rj1Uw8Xk601SIt7mJ6A186Bw==
+
+"@zag-js/utils@0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@zag-js/utils/-/utils-0.1.2.tgz#cc785c97fb7a96386e6b1c214693b89af3ff6cca"
+  integrity sha512-YLKgHY445GcyPfFlh5Gh5V1lBxJCsQVbBxJeHne67h4IMdFny70FPj3acqmOPi1mZh7bv0j4cfVjVRMNb7nq2Q==
 
 ansi-styles@^3.2.1:
   version "3.2.1"
@@ -1686,6 +1772,11 @@ json5@^2.2.1:
   resolved "https://registry.yarnpkg.com/json5/-/json5-2.2.1.tgz#655d50ed1e6f95ad1a3caababd2b0efda10b395c"
   integrity sha512-1hqLFMSrGHRHxav9q9gNjJ5EXznIxGVO09xQRrwplcS8qs28pZ8s8hupZAmqDwZUmVZ2Qb2jnyPOWcDH8m8dlA==
 
+klona@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/klona/-/klona-2.0.5.tgz#d166574d90076395d9963aa7a928fabb8d76afbc"
+  integrity sha512-pJiBpiXMbt7dkzXe8Ghj/u4FfXOOa98fPW+bihOJ4SjnoijweJrNThJfd3ifXpXhREjpoF2mZVH1GfS9LV3kHQ==
+
 lines-and-columns@^1.1.6:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.2.4.tgz#eca284f75d2965079309dc0ad9255abb2ebc1632"
@@ -1845,6 +1936,11 @@ prop-types@^15.6.2, prop-types@^15.7.2:
     loose-envify "^1.4.0"
     object-assign "^4.1.1"
     react-is "^16.13.1"
+
+proxy-compare@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/proxy-compare/-/proxy-compare-2.1.0.tgz#5f99b3ed6a265135ce7ec145ce304e6f89b6511b"
+  integrity sha512-wapJ3h/w8fRSyPEG0y2WMV+tf9xwvj3nxM6aHVuPEOwKs/t5xLSKZb44ubNTiqq2T6lmEMHEWGMTaU2L6ddaFA==
 
 qs@^6.4.0:
   version "6.10.5"
@@ -2181,6 +2277,11 @@ use-sidecar@^1.1.2:
     detect-node-es "^1.1.0"
     tslib "^2.0.0"
 
+use-sync-external-store@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.1.0.tgz#3343c3fe7f7e404db70f8c687adf5c1652d34e82"
+  integrity sha512-SEnieB2FPKEVne66NpXPd1Np4R1lTNKfjuy3XdIoPQKYBAFdzbzSZlSn1KJZUiihQLQC5Znot4SBz1EOTBwQAQ==
+
 util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
@@ -2190,6 +2291,14 @@ uuid@^8.3.2:
   version "8.3.2"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
   integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
+
+valtio@^1.6.0, valtio@^1.6.1:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/valtio/-/valtio-1.6.1.tgz#c24e8dcb27e6844e972ef49f22519e029404d650"
+  integrity sha512-caSZhnKNHbsUNQSftEzIeDKFP9Wcmj2c1hrCLWA0vA4eUBu6vxqEPs/cm0ln8umF5L1xbQGppopt79xxELmkAg==
+  dependencies:
+    proxy-compare "2.1.0"
+    use-sync-external-store "1.1.0"
 
 vite@^2.9.12, vite@^2.9.9:
   version "2.9.12"

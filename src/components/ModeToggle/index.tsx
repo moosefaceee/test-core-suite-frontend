@@ -1,13 +1,17 @@
-import { Icon, IconButton, useColorMode } from '@chakra-ui/react'
+import { Icon, useColorMode } from '@chakra-ui/react'
 import { FiMoon, FiSun } from 'react-icons/fi'
+import { IconButtonToggle } from '../FormElements'
 
 function ModeToggle() {
-  const { colorMode, toggleColorMode } = useColorMode()
+  const { toggleColorMode } = useColorMode()
 
   return (
-    <IconButton onClick={toggleColorMode} aria-label="dark/light mode toggle">
-      {colorMode === 'light' ? <Icon as={FiSun} /> : <Icon as={FiMoon} />}
-    </IconButton>
+    <IconButtonToggle
+      onClick={toggleColorMode}
+      aria-label="dark/light mode toggle"
+      on={<Icon as={FiSun} />}
+      off={<Icon as={FiMoon} />}
+    />
   )
 }
 
