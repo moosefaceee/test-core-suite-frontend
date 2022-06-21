@@ -6,6 +6,7 @@
  */
 
 import { ComponentStyleConfig, extendTheme, type ThemeConfig } from '@chakra-ui/react'
+import { mode, StyleConfig } from '@chakra-ui/theme-tools'
 
 /**
  * I'd like to keep this here to serve as a guide! 🦮
@@ -78,7 +79,7 @@ const Input: ComponentStyleConfig = {
     },
     md: {
       field: {
-        borderRadius: 'md',
+        borderRadius: 'sm',
         fontSize: 'md',
         height: 10,
         paddingX: 4
@@ -159,6 +160,66 @@ const Input: ComponentStyleConfig = {
   }
 }
 
+const ButtonHover = {
+  _hover: {
+    transform: 'translateY(-1px)',
+    boxShadow: 'md'
+  }
+}
+
+const Button: StyleConfig = {
+  sizes: {
+    md: {
+      rounded: 'sm'
+    },
+    lg: {
+      rounded: 'sm'
+    }
+  },
+  variants: {
+    cta: (props) => {
+      return {
+        backgroundColor: mode('black', 'white')(props),
+        borderColor: 'black',
+        borderWidth: 1,
+        color: mode('white', 'black')(props),
+        ...ButtonHover
+      }
+    },
+    back: (props) => {
+      return {
+        backgroundColor: mode('white', 'black')(props),
+        borderColor: 'black',
+        borderWidth: 1,
+        color: mode('black', 'white')(props),
+        ...ButtonHover
+      }
+    }
+  }
+}
+
+const Link = {
+  baseStyle: {
+    color: 'teal.700',
+    textDecoration: 'underline'
+  }
+}
+
+const Checkbox: ComponentStyleConfig = {
+  defaultProps: {
+    colorScheme: 'brand'
+  },
+  baseStyle: (props) => {
+    const { colorScheme: c } = props
+
+    return {
+      _checked: {
+        bg: mode(`${c}.500`, `${c}.400`)(props)
+      }
+    }
+  }
+}
+
 // 2. Add your color mode config
 const config: ThemeConfig = {
   initialColorMode: 'light',
@@ -168,14 +229,22 @@ const config: ThemeConfig = {
 // 3. Extend the theme to include custom colors, fonts, etc
 const colors = {
   brand: {
-    900: '#1a365d',
-    800: '#153e75',
-    700: '#2a69ac'
+    700: '#C3AA00',
+    600: '#c8ae00',
+    500: '#fada00',
+    400: '#FFE537',
+    300: '#FFEB62'
+  },
+  teal: {
+    700: '#669e9e'
   }
 }
 
 const components = {
-  Input
+  Input,
+  Button,
+  Link,
+  Checkbox
 }
 
 const textStyles = {
@@ -185,7 +254,7 @@ const textStyles = {
   },
   p: {
     fontSize: '16px',
-    lineHeight: 1.2
+    lineHeight: 1.4
   },
   h1: {
     fontSize: ['48px', '72px'],

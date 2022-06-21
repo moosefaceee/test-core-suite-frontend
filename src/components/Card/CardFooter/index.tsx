@@ -16,7 +16,7 @@ export default CardFooter
 CardFooter.defaultProps = {
   padding: 4,
   backgroundColor: 'white',
-  roundedBottomLeft: 4,
-  roundedBottomRight: 4,
+  roundedBottomLeft: 2,
+  roundedBottomRight: 2,
   flexDirection: 'column'
 }

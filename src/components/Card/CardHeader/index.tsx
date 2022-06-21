@@ -15,7 +15,7 @@ export default CardHeader
 
 CardHeader.defaultProps = {
   padding: 4,
-  roundedTopLeft: 4,
-  roundedTopRight: 4,
+  roundedTopLeft: 2,
+  roundedTopRight: 2,
   flexDirection: 'row'
 }
