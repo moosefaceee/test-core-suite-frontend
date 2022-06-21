@@ -36,7 +36,7 @@ function Navigation() {
        * Authenticated pages
        *
        * All paths will be prepended with /auth and are protected by the AuthProvider
-       * When a Guest tries to navigate to any of these, they will be taken to /login
+       * When a Guest tries to navigate to any of these, they will be taken to /
        */}
       <Route
         element={

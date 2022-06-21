@@ -1,38 +1,59 @@
-import { Box, BoxProps, IconButton, useBreakpointValue } from '@chakra-ui/react'
+import {
+  Box,
+  BoxProps,
+  Button,
+  Flex,
+  Icon,
+  useColorMode,
+  useColorModeValue
+} from '@chakra-ui/react'
 import React, { ReactElement } from 'react'
-import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
+import { FiArrowLeft, FiArrowRight } from 'react-icons/fi'
 import Slider from 'react-slick'
+import { CarouselWrap } from './styles'
 
 type CarouselProps = BoxProps & {
-  slidesToShow?: number
-  slidesToScroll?: number
-  renderSlides: () => ReactElement | ReactElement[]
+  renderSlides: () => ReactElement[]
   renderControls?: boolean
 }
 
-function Carousel({
-  slidesToShow,
-  slidesToScroll,
-  renderSlides,
-  renderControls,
-  ...rest
-}: CarouselProps): ReactElement {
-  // only fade if more than one slide
-  const shouldFade = slidesToScroll && slidesToScroll === 1
+function Carousel({ renderSlides, renderControls, ...rest }: CarouselProps): ReactElement {
+  const { colorMode } = useColorMode()
 
-  // Settings for the slider
+  const color = useColorModeValue('gray.50', 'white')
+
   const settings = {
     dots: true,
-    arrows: false,
-    fade: !!shouldFade,
     infinite: true,
-    autoplay: true,
     speed: 500,
-    autoplaySpeed: 5000,
-    slidesToShow,
-    slidesToScroll,
-    vertical: false,
-    centerPadding: '0px'
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    appendDots: (i: number) => (
+      <Flex justifyContent="space-between" width="100%" alignItems="center">
+        <Button
+          width={100}
+          aria-label="previous-arrow"
+          variant="ghost"
+          zIndex={2}
+          onClick={() => slider?.slickPrev()}
+          leftIcon={<Icon as={FiArrowLeft} />}
+        >
+          Back
+        </Button>
+        <Flex color={color}>{i}</Flex>
+        <Button
+          width={100}
+          aria-label="next-arrow"
+          variant="ghost"
+          zIndex={2}
+          onClick={() => slider?.slickNext()}
+          rightIcon={<Icon as={FiArrowRight} />}
+        >
+          Next
+        </Button>
+      </Flex>
+    )
   }
   /**
    * As we have used custom buttons, we need a reference variable to
@@ -40,16 +61,8 @@ function Carousel({
    */
   const [slider, setSlider] = React.useState<Slider | null>(null)
 
-  /**
-   * These are the breakpoints which changes the position of the
-   * buttons as the screen size changes
-   */
-  const top = useBreakpointValue({ base: '90%', md: '50%' })
-  const side = useBreakpointValue({ base: '30%', md: '40px' })
-
   return (
     <Box {...rest}>
-      {/* CSS files for react-slick */}
       <link
         rel="stylesheet"
         type="text/css"
@@ -61,37 +74,11 @@ function Carousel({
         type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
       />
-      {renderControls && slidesToShow && slidesToShow > 1 && (
-        <>
-          <IconButton
-            aria-label="left-arrow"
-            variant="ghost"
-            position="absolute"
-            left={side}
-            top={top}
-            transform="translate(0%, -50%)"
-            zIndex={2}
-            onClick={() => slider?.slickPrev()}
-          >
-            <FiChevronLeft size="40px" />
-          </IconButton>
-          <IconButton
-            aria-label="right-arrow"
-            variant="ghost"
-            position="absolute"
-            right={side}
-            top={top}
-            transform="translate(0%, -50%)"
-            zIndex={2}
-            onClick={() => slider?.slickNext()}
-          >
-            <FiChevronRight size="40px" />
-          </IconButton>
-        </>
-      )}
-      <Slider {...settings} ref={(slider) => setSlider(slider)}>
-        {renderSlides()}
-      </Slider>
+      <CarouselWrap colorMode={colorMode}>
+        <Slider {...settings} ref={(slider) => setSlider(slider)}>
+          {renderSlides()}
+        </Slider>
+      </CarouselWrap>
     </Box>
   )
 }
@@ -99,11 +86,5 @@ function Carousel({
 export default Carousel
 
 Carousel.defaultProps = {
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  position: 'relative',
-  height: '600px',
-  width: 'full',
-  overflow: 'hidden',
   renderControls: true
 }

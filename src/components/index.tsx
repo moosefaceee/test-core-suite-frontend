@@ -1,3 +1,6 @@
+export { default as Card } from './Card'
+export { default as CardFooter } from './Card/CardFooter'
+export { default as CardHeader } from './Card/CardHeader'
 export { default as Carousel } from './Carousel'
 export { default as GuestNavbar } from './GuestNavbar'
 export { default as Logo } from './Logo'

@@ -15,7 +15,9 @@ export default {
   top: new URL('../assets/map/top.png', import.meta.url).href,
   coreSuiteDark: new URL('../assets/images/core-suite-FE-dark.svg', import.meta.url).href,
   coreSuiteLight: new URL('../assets/images/core-suite-FE-light.svg', import.meta.url).href,
-  walkthroughOne: new URL('../assets/walkthrough/shutterstock-1.jpg', import.meta.url).href,
-  walkthroughTwo: new URL('../assets/walkthrough/shutterstock-2.jpg', import.meta.url).href,
-  walkthroughThree: new URL('../assets/walkthrough/shutterstock-3.jpg', import.meta.url).href
+  walkthroughOne: new URL('../assets/walkthrough/walkthrough-one.jpg', import.meta.url).href,
+  walkthroughTwo: new URL('../assets/walkthrough/walkthrough-two.jpg', import.meta.url).href,
+  walkthroughThree: new URL('../assets/walkthrough/walkthrough-three.jpg', import.meta.url).href,
+  walkthroughFour: new URL('../assets/walkthrough/walkthrough-four.jpg', import.meta.url).href,
+  walkthroughFive: new URL('../assets/walkthrough/walkthrough-five.jpg', import.meta.url).href
 }

@@ -1,14 +1,23 @@
-import { Box } from '@chakra-ui/react'
+import { Box, ColorMode } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 
-export const CarouselWrap = styled(Box)`
-  .slick-active {
-    display: flex;
-    justify-content: center;
-  }
+type CarouselProps = {
+  colorMode: ColorMode
+}
 
-  .slick-slide:not(.slick-active) {
+export const CarouselWrap = styled(Box)<CarouselProps>`
+  .slick-dots {
+    align-items: center;
     display: flex;
-    justify-content: center;
+    width: 100%;
+  }
+  .slick-dots li button {
+    color: ${({ colorMode }) => (colorMode === 'dark' ? 'white' : 'black')};
+  }
+  .slick-dots li button:before {
+    color: ${({ colorMode }) => (colorMode === 'dark' ? 'white' : 'black')};
+  }
+  .slick-dots li.slick-active button:before {
+    color: ${({ colorMode }) => (colorMode === 'dark' ? 'white' : 'black')};
   }
 `
