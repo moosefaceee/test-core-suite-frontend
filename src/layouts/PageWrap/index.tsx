@@ -13,8 +13,6 @@ function PageWrap({ children, title, ...rest }: PageWrapProps): JSX.Element {
       <Flex
         as="main"
         // TODO: colors from theme (AlphaWhite/AlphaBlack https://chakra-ui.com/docs/styled-system/theming/theme)
-        // & as defaultProps? Not sure why it isn't working.
-        // & where is backgroundColor applied?
         boxShadow={`0 -1px 0 0 rgba(204, 204, 204, ${useColorModeValue('.4', '.2')})`}
         {...rest}
       >
