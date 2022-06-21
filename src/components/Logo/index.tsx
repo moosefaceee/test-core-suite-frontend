@@ -1,4 +1,4 @@
-import { Box, Image, ImageProps, useColorMode } from '@chakra-ui/react'
+import { Box, Image, ImageProps } from '@chakra-ui/react'
 import { ReactElement } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../../context/AuthProvider'
@@ -6,7 +6,6 @@ import images from '../../theme/images'
 
 function Logo({ ...rest }: ImageProps): ReactElement {
   let { isAuthenticated } = useAuth()
-  let { colorMode } = useColorMode()
   let navigate = useNavigate()
 
   return (
