@@ -6,6 +6,7 @@ import {
   HomeScreen,
   LoginScreen,
   NotFoundScreen,
+  OTPScreen,
   RegisterScreen
 } from '../containers'
 import { RequireAuth } from '../context/AuthProvider'
@@ -27,6 +28,7 @@ function Navigation() {
         <Route element={<PageWrap title="Core Suite" />}>
           <Route path="/" element={<LoginScreen />} />
           <Route path="register" element={<RegisterScreen />} />
+          <Route path="verification" element={<OTPScreen />} />
           <Route path="home" element={<HomeScreen />} />
           <Route path="about" element={<AboutScreen />} />
           <Route path="*" element={<NotFoundScreen />} />

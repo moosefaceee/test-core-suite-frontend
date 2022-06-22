@@ -1,5 +1,6 @@
 import { Button, Flex, Link, Stack, Text } from '@chakra-ui/react'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { ReactElement } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import { Card, RememberMe } from '../../components'
@@ -7,7 +8,7 @@ import { PasswordInput, TextInput } from '../../components/FormElements'
 import { useAuth } from '../../context/AuthProvider'
 import { loginDefaultValues, loginSchema } from './Validation'
 
-function LoginScreen(): React.ReactElement {
+function LoginScreen(): ReactElement {
   let { login } = useAuth()
   let navigate = useNavigate()
 

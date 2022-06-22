@@ -6,18 +6,19 @@ type CarouselProps = {
 }
 
 export const CarouselWrap = styled(Box)<CarouselProps>`
-  .slick-dots {
-    align-items: center;
-    display: flex;
-    width: 100%;
+  .react-slideshow-container + ul.indicators {
+    margin-top: 0px;
+    position: absolute;
+    left: 0;
+    right: 0;
   }
-  .slick-dots li button {
-    color: ${({ colorMode }) => (colorMode === 'dark' ? 'white' : 'black')};
+  .indicator {
+    cursor: pointer;
+    padding: 0 10px;
+    text-align: center;
   }
-  .slick-dots li button:before {
-    color: ${({ colorMode }) => (colorMode === 'dark' ? 'white' : 'black')};
-  }
-  .slick-dots li.slick-active button:before {
-    color: ${({ colorMode }) => (colorMode === 'dark' ? 'white' : 'black')};
+
+  .indicator.active {
+    color: ${({ colorMode }) => (colorMode === 'dark' ? 'white' : 'black')}#fff;
   }
 `

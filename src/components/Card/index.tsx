@@ -17,7 +17,7 @@ function Card({ children, ...rest }: CardProps): ReactElement {
 export default Card
 
 Card.defaultProps = {
-  width: 'auto',
+  // width: 'auto',
   rounded: 'sm',
   borderWidth: '1px',
   onClick: () => false,

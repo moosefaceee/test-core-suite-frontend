@@ -3,10 +3,12 @@ import { faker } from '@faker-js/faker'
 import { createContext, ReactElement, useContext, useEffect, useState } from 'react'
 import { Navigate, useLocation, useNavigate } from 'react-router-dom'
 
+type User = { email: string; firstName: string } | null
+
 type AuthProviderProps = {
   isAuthenticated: boolean
   isAuthenticating: boolean
-  user: string | null
+  user: User
   login: () => void
   logout: () => void
   register: VoidFunction
@@ -53,7 +55,7 @@ function AuthProvider({ children }: { children: ReactElement }): ReactElement {
 
   let [isAuthenticating, setIsAuthenticating] = useState(false)
   let [isAuthenticated, setIsAuthenticated] = useState(false)
-  let [user, setUser] = useState<string | null>(null)
+  let [user, setUser] = useState<User>(null)
 
   // code for pre-loading the user's information if we have their token in
   // localStorage goes here
@@ -81,7 +83,7 @@ function AuthProvider({ children }: { children: ReactElement }): ReactElement {
   function login() {
     setIsAuthenticating(true)
     return fakeAuthProvider.login(() => {
-      setUser(faker.name.findName())
+      setUser({ email: faker.internet.exampleEmail(), firstName: faker.name.findName() })
       setIsAuthenticating(false)
       // this is where any newly logged in user should be navigated to
       navigate('/auth/dashboard')

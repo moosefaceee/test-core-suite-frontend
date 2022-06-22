@@ -1,4 +1,4 @@
-import { Image, Stack, Text } from '@chakra-ui/react'
+import { Box, Image, Stack, Text } from '@chakra-ui/react'
 import { ReactElement } from 'react'
 import { Card, Carousel } from '../../components'
 import images from '../../theme/images'
@@ -35,7 +35,14 @@ let isUnderConstruction = false
 function renderSlides({ slides }: { slides: Slide[] }) {
   return slides.map((slide) => (
     <Stack textAlign="center" spacing={4} marginBottom={6}>
-      <Image src={slide.image} width="md" objectFit="cover" borderRadius={4} height={250} />
+      <Image
+        src={slide.image}
+        width="md"
+        objectFit="cover"
+        borderRadius={4}
+        height={250}
+        fallback={<Box />}
+      />
       <Text textStyle="h5">{slide.title}</Text>
       <Text textStyle="p">{slide.subTitle}</Text>
     </Stack>
@@ -44,16 +51,12 @@ function renderSlides({ slides }: { slides: Slide[] }) {
 
 function AboutScreen(): ReactElement {
   return (
-    <Stack align="center" justify="center" flexDirection="column" flex={1}>
+    <Stack align="center" justify="center" flex={1} minW="100%" minH="100%">
       {isUnderConstruction ? (
         <Text textStyle="h5">This is a page about us, it's still under construction 🚧</Text>
       ) : (
-        <Card padding={4} paddingBottom={8}>
-          <Carousel
-            renderControls={false}
-            width="sm"
-            renderSlides={() => renderSlides({ slides })}
-          />
+        <Card padding={4}>
+          <Carousel renderSlides={() => renderSlides({ slides })} />
         </Card>
       )}
     </Stack>

@@ -16,7 +16,7 @@ function GuestNavbar() {
         <Logo />
         <Flex height={16} alignItems="center" justifyContent="flex-end" as="nav">
           <Stack direction="row" spacing={6} alignItems="center">
-            <NavLink to={'/home'}>Home</NavLink>
+            <NavLink to={'/'}>Home</NavLink>
             <NavLink to={'/about'}>About</NavLink>
             <ModeToggle />
           </Stack>
