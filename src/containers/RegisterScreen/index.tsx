@@ -1,25 +1,10 @@
-import {
-  Box,
-  Button,
-  Flex,
-  FormControl,
-  FormLabel,
-  Heading,
-  Icon,
-  Input,
-  InputGroup,
-  InputRightElement,
-  Link,
-  Stack,
-  Text,
-  useColorModeValue
-} from '@chakra-ui/react'
+import { Button, Flex, Link, Stack, Text } from '@chakra-ui/react'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useState } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
-import { FiEye, FiEyeOff } from 'react-icons/fi'
 import { useNavigate } from 'react-router-dom'
-import { TermsAndConditions } from '../../components'
+import { Card, TermsAndConditions } from '../../components'
+import { PasswordInput, TextInput } from '../../components/FormElements'
 import { useAuth } from '../../context/AuthProvider'
 import { registerDefaultValues, registerSchema } from './Validation'
 
@@ -41,63 +26,38 @@ function RegisterScreen(): React.ReactElement {
 
   return (
     <Flex align="center" justify="center" flexDirection="column" flex={1}>
-      <Stack spacing={8} marginX="auto" width="md" paddingX={6}>
-        <Stack align="center">
-          <Heading fontSize="4xl" textAlign="center">
+      <Card padding={4} width="sm">
+        <Stack align="flex-start" marginBottom={4}>
+          <Text textStyle="h4" fontWeight="semibold">
             Sign up
-          </Heading>
-          <Text fontSize="lg" color="gray.400">
-            to enjoy all of our cool features ✌️
+          </Text>
+          <Text textStyle="p" color="gray.400" textAlign="left">
+            Create your AutoPV account and define your subscription details.
           </Text>
         </Stack>
-        <Box rounded="lg" bg={useColorModeValue('white', 'gray.700')} boxShadow="lg" padding={8}>
-          <FormProvider {...methods}>
-            <Stack spacing={4}>
-              <FormControl id="email" isRequired>
-                <FormLabel>Email address</FormLabel>
-                <Input type="email" />
-              </FormControl>
-              <FormControl id="password" isRequired>
-                <FormLabel>Password</FormLabel>
-                <InputGroup>
-                  <Input type={showPassword ? 'text' : 'password'} />
-                  <InputRightElement height="full">
-                    <Button
-                      variant="ghost"
-                      onClick={() => setShowPassword((showPassword) => !showPassword)}
-                    >
-                      {showPassword ? <Icon as={FiEye} /> : <Icon as={FiEyeOff} />}
-                    </Button>
-                  </InputRightElement>
-                </InputGroup>
-              </FormControl>
+        <FormProvider {...methods}>
+          <Stack spacing={2}>
+            <TextInput label="Email address" name="email" type="email" />
+            <PasswordInput label="Passowrd" name="password" />
+            <Stack spacing={6}>
               <TermsAndConditions />
-              <Stack spacing={6} paddingTop={2}>
-                <Button
-                  loadingText="Submitting"
-                  size="lg"
-                  backgroundColor="blue.400"
-                  color="white"
-                  _hover={{
-                    backgroundColor: 'blue.500'
-                  }}
-                  onClick={methods.handleSubmit(onSubmit)}
-                >
-                  Sign up
-                </Button>
-              </Stack>
-              <Stack paddingTop={4}>
-                <Text alignItems="center">
-                  Already a user?{' '}
-                  <Link color="blue.400" onClick={() => navigate('/')}>
-                    Login
-                  </Link>
-                </Text>
-              </Stack>
+              <Button
+                loadingText="Submitting"
+                size="lg"
+                onClick={methods.handleSubmit(onSubmit)}
+                variant="cta"
+              >
+                Sign up
+              </Button>
             </Stack>
-          </FormProvider>
-        </Box>
-      </Stack>
+            <Stack paddingTop={4}>
+              <Text alignItems="center">
+                Already a user? <Link onClick={() => navigate('/')}>Login</Link>
+              </Text>
+            </Stack>
+          </Stack>
+        </FormProvider>
+      </Card>
     </Flex>
   )
 }

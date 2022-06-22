@@ -1,4 +1,4 @@
-import { Button, chakra, Flex, Text } from '@chakra-ui/react'
+import { chakra, Flex, Link, Text } from '@chakra-ui/react'
 import { ReactElement } from 'react'
 import CheckBox from '../FormElements/Checkbox'
 
@@ -11,15 +11,9 @@ function TermsConditionsInput(): ReactElement {
         <Flex justifyContent="space-between" width="100%">
           <Text>
             <chakra.span>I accept the</chakra.span>
-            <Button
-              color="blue.400"
-              fontWeight="normal"
-              marginLeft={1}
-              onClick={() => alert('Ts & Cs pdf needed')}
-              variant="link"
-            >
+            <Link marginLeft={1} onClick={() => alert('Ts & Cs pdf needed')}>
               Terms &amp; Conditions
-            </Button>
+            </Link>
           </Text>
         </Flex>
       )}

@@ -55,15 +55,9 @@ function PasswordInput({
             borderLeftWidth={0}
             borderTopLeftRadius={0}
             borderBottomLeftRadius={0}
-            _invalid={{ borderColor: 'red' }}
-            _focus={{ borderColor: 'blue.500' }}
-            _hover={{ backgroundColor: 'gray.100' }}
+            borderWidth={1}
           >
-            {passwordVisible ? (
-              <Icon as={FiEye} width={20} color="blue.500" />
-            ) : (
-              <Icon as={FiEyeOff} width={20} color="blue.500" />
-            )}
+            {passwordVisible ? <Icon as={FiEye} width={20} /> : <Icon as={FiEyeOff} width={20} />}
           </Button>
         </InputRightElement>
       </InputGroup>

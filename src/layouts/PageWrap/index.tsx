@@ -1,4 +1,4 @@
-import { Flex, FlexProps, useColorModeValue } from '@chakra-ui/react'
+import { Flex, FlexProps } from '@chakra-ui/react'
 import { Helmet } from 'react-helmet-async'
 import { Outlet } from 'react-router-dom'
 
@@ -13,7 +13,8 @@ function PageWrap({ children, title, ...rest }: PageWrapProps): JSX.Element {
       <Flex
         as="main"
         // TODO: colors from theme (AlphaWhite/AlphaBlack https://chakra-ui.com/docs/styled-system/theming/theme)
-        boxShadow={`0 -1px 0 0 rgba(204, 204, 204, ${useColorModeValue('.4', '.2')})`}
+        // I kinda like this but it's not there in designs, keeping in case I get a go ahead to add back
+        // boxShadow={`0 -1px 0 0 rgba(204, 204, 204, ${useColorModeValue('.4', '.2')})`}
         {...rest}
       >
         {children}

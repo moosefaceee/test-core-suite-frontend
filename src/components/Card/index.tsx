@@ -5,7 +5,10 @@ export type CardProps = FlexProps
 
 function Card({ children, ...rest }: CardProps): ReactElement {
   return (
-    <Flex backgroundColor={useColorModeValue('gray.50', 'gray.800')} {...rest}>
+    <Flex
+      backgroundColor={useColorModeValue('gray.50', 'gray.700') || rest.backgroundColor}
+      {...rest}
+    >
       {children}
     </Flex>
   )
@@ -14,8 +17,8 @@ function Card({ children, ...rest }: CardProps): ReactElement {
 export default Card
 
 Card.defaultProps = {
-  width: 'auto',
-  rounded: 'md',
+  // width: 'auto',
+  rounded: 'sm',
   borderWidth: '1px',
   onClick: () => false,
   flexDirection: 'column'

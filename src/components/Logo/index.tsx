@@ -1,4 +1,4 @@
-import { Box, Image, ImageProps } from '@chakra-ui/react'
+import { Center, Image, ImageProps, useColorModeValue } from '@chakra-ui/react'
 import { ReactElement } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../../context/AuthProvider'
@@ -9,9 +9,16 @@ function Logo({ ...rest }: ImageProps): ReactElement {
   let navigate = useNavigate()
 
   return (
-    <Box onClick={() => navigate(isAuthenticated ? '/auth/dashboard' : '/')} cursor="pointer">
-      <Image {...rest} src={images.sovtech} />
-    </Box>
+    <Center
+      onClick={() => navigate(isAuthenticated ? '/auth/dashboard' : '/')}
+      cursor="pointer"
+      boxSize={50}
+      rounded="50%"
+      backgroundColor={useColorModeValue('black', 'white')}
+      padding={2}
+    >
+      <Image loading="eager" {...rest} src={useColorModeValue(images.sssWhite, images.sssBlack)} />
+    </Center>
   )
 }
 
